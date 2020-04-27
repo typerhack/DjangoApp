@@ -1,0 +1,64 @@
+Model/DB Feilds
+
+### Banner
+        Fields:
+            ID : INT
+            Picture : STR
+            Alt : STR
+            Name : STR
+            Location : STR
+### Trainings
+        Fields:
+            ID : INT
+            Picture_Main : STR
+            Photo_1 : STR
+            Photo_2 : STR
+            Photo_3 : STR
+            Photo_4 : STR
+            Photo_5 : STR
+            Title : STR
+            Abstract : STR
+            Text : TEXT
+            Video Link
+            Author : INT (FOREIGN KEY FROM [AUTHOR])
+### Blog
+        Fields:
+            ID : INT
+            Picture_Main : STR
+            Photo_1 : STR
+            Photo_2 : STR
+            Photo_3 : STR
+            Photo_4 : STR
+            Photo_5 : STR
+            Title : STR
+            Abstract : STR
+            article : TEXT
+            Video Link
+            Author : Author : INT (FOREIGN KEY FROM [AUTHOR])
+            Is_Published : BOOL [0]
+### Authors
+        Fields:
+            ID : INT
+            First Name : STR
+            Last Name : STR
+            Email : STR
+            Username : STR
+            Password : STR
+            Photo : STR
+            Description : TEXT
+            Phone : STR
+### Contacts
+        Fields:
+            Name : STR
+            Last Name : STR
+            Degree :
+            Receiving mail posts : BOOL
+### Editor Dashboard
+        Fields:
+            Article_Title : (FOREIGN KEY FROM [Blog])
+            Author : INT (FOREIGN KEY FROM [AUTHOR])
+            Publish : BOOL [0]
+### Shop
+        Fields:
+            ID : INT
+            Price : FLOAT / INT

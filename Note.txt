@@ -1,0 +1,32 @@
+## pip list
+This command shows the package installed on venv.
+
+## django-admin
+This shows the admin commands
+
+## django-admin startproject <project name>
+This creates a new django project
+
+## python manage.py help
+Shows the command available for manage.py
+
+## python manage.py runserver
+This command runs the django server
+
+## django-admin startapp <name_of_the-app>
+This commands creat an app for us. the website can contain many apps.
+
+## POSTGRESQL Port: 5432
+
+## python manage.py makemigrations
+This command makes a recipe of the changes neede for the database
+
+## python manage.py migrate
+This commands make the necessary changes needed by database
+This command is used after th makemigrations command
+
+## python manage.py sqlmigrate <name_of_the_app> <name_of_the_file>
+this converts the result of makemigrations command into sql commands and show it to us
+
+## python manage.py createsuperuser
+This creates an account for admin area

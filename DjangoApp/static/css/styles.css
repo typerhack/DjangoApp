@@ -1,0 +1,200 @@
+@charset "utf-8";
+@import url("../webfonts/Yekan/stylesheet.css");
+
+
+
+/* Background color for navbar and dropdown menus */
+.navbar-custom, .navbar-custom .dropdown-menu {
+    background-color: #4896aa;
+}
+/* Text color for navbar and dropdown menus */
+.navbar-custom .navbar-brand, .navbar-custom .navbar-text,
+.navbar-custom .navbar-nav .nav-link,
+.navbar-custom .dropdown-item {
+    color: #ecf0f1;
+}
+/* Background and text colors for current page link and links on hover and focus */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .dropdown-item:hover, 
+.navbar-custom .dropdown-item:focus {
+    background-color: #346f7e;
+    color: #fff;
+}
+/* Border and text colors for menu icon on small screens */
+.custom-toggler.navbar-toggler {
+    border-color: #ecf0f1;
+    color: #fff;
+}
+/* Hamburger icon - use same rgb values as previous rule for stroke */
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(236,240,241, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.navbar-brand {
+    background-image: url(../Images/OrigamiFox-white.svg);
+    background-repeat: no-repeat;
+    padding-left: 44px;
+    background-position: 0% center;
+}
+#banner {
+    padding-left: 0px;
+    padding-right: 0px;
+    position: relative;
+}
+#banner h1 {
+    position: absolute;
+    color: #F94900;
+    font-size: 2rem;
+    font-family: aclonica;
+    font-style: normal;
+    font-weight: 400;
+    top: 75%;
+    right: 2%;
+    text-shadow: 2px 1px #4D4D4D;
+}
+#highlights {
+    text-align: center;
+}
+.carousel-caption h5 {
+    color: rgba(0,0,0,1.00);
+    background-color: rgba(255,255,255,0.36);
+}
+.carousel-caption p {
+    color: rgba(0,0,0,1.00);
+    text-shadow: 2px 1px rgba(95,95,95,0.59);
+    background-color: rgba(255,255,255,0.36);
+}
+.nav-link-text {
+    font-family: Yekan;
+}
+.header-text {
+    font-family: Yekan;
+}
+
+
+
+
+
+
+@media screen and (min-width:576px){
+#banner h1 {
+    font-size: 3rem;
+}
+h2 .img-size {
+    width: 150px;
+    height: 150px;
+}
+
+
+}
+
+@media screen and (min-width:450px){
+#banner h1 {
+    font-size: 2.5rem;
+}
+
+}
+
+@media screen and (min-width:768px){
+#banner h1 {
+    font-size: 4rem;
+}
+
+}
+
+@media screen and (min-width:992px){
+#banner h1 {
+    font-size: 5rem;
+}
+h2 .img-size {
+    width: 250px;
+    height: 250px;
+}
+
+
+}
+
+@media screen and (min-width:1200px){
+#banner h1 {
+    font-size: 6rem;
+}
+
+
+}
+
+@media screen and (min-width:1500px){
+#banner h1 {
+    font-size: 9rem;
+}
+h2 .img-size {
+    width: 300px;
+    height: 300px;
+}
+
+
+}
+.para-text-size {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+.img-size {
+    width: 300px;
+    height: 300px;
+    padding-bottom: 10px;
+}
+.para-header-size {
+    font-size: 2rem;
+    color: #4896AA;
+}
+#feature {
+    background-color: #346f7e;
+    background-image: -webkit-linear-gradient(270deg,rgba(52,111,126,1.00) 0%,rgba(72,150,170,1.00) 100%);
+    background-image: -moz-linear-gradient(270deg,rgba(52,111,126,1.00) 0%,rgba(72,150,170,1.00) 100%);
+    background-image: -o-linear-gradient(270deg,rgba(52,111,126,1.00) 0%,rgba(72,150,170,1.00) 100%);
+    background-image: linear-gradient(180deg,rgba(52,111,126,1.00) 0%,rgba(72,150,170,1.00) 100%);
+    color: #FFFFFF;
+}
+#feature h2 {
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+#feature p {
+    font-size: 1.2rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+#article {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: rgba(255,255,255,1.00);
+    font-size: 0.8rem;
+    padding-top: 15px;
+    background-image: -webkit-linear-gradient(270deg,rgba(255,255,255,0.00) 0%,rgba(56,56,56,1.00) 100%);
+    background-image: -moz-linear-gradient(270deg,rgba(255,255,255,0.00) 0%,rgba(56,56,56,1.00) 100%);
+    background-image: -o-linear-gradient(270deg,rgba(255,255,255,0.00) 0%,rgba(56,56,56,1.00) 100%);
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.00) 0%,rgba(56,56,56,1.00) 100%);
+	
+	
+}
+
+.icon {
+    margin-right: 5px;
+    margin-left: 5px;
+
+}
+.footer-text {
+    margin-top: 5px;
+}
+.image_rounded {
+	border-radius: 15%;
+}

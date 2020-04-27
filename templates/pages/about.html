@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div style="position: absolute; margin-top: 5%;">
+      <div class="row" style="padding-top: 50px; padding-bottom: 50px;" >
+        <div class="col-xl-5"><img src="{% static 'Images/about.jpg' %}" class="img-fluid image_rounded" alt="About US"></div>
+        <div class="col-xl-7 my-auto" style="text-align: right;">
+          <h2><span class="para-header-size header-text" dir="RTL" style="font-family: Yekan">درباره ما</span></h2>
+          <p><span class="para-text-size" dir="RTL">دنیای معماری امروز، نیازمند رویکرد نوین و جدید است. چرا که با تکرار گذشته هرگز نمی توان برای امروز معماری کرد. گروه مهندسین مشاور Hybevo، پیشگام در عرصه فرآیند طراحی مبتنی بر تحقیق، در تلاش است تا با ساختن ابزار های جدید، به همراه ارائه آموزش های نوین به دفاتر مشاور و طراحی معماری و دانشجویان و تولید مقالات، وظیفه اجتماعی خود را در این راستا انجام دهد.
+            در صورت نیاز برای مشاوره فرم درخواست مشاوره را پرکنید.
+  </span></p>
+          </div>
+      </div>
+    </div>
+{% endblock %}
