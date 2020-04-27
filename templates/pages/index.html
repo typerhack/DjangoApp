@@ -41,9 +41,9 @@
       <div class="col-md-9">
             <div id="carousel1" class="carousel slide" data-interval="10000" data-ride="carousel" style="background-color: rgba(0,0,0,0.00)">
               <ol class="carousel-indicators">
-                <li data-target="#carousel1" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel1" data-slide-to="1"></li>
-                <li data-target="#carousel1" data-slide-to="2"></li>
+                  {% for item in banner %}
+                      <li data-target="#carousel1" data-slide-to="{{ forloop.counter }}" class="{% if forloop.first %}active{% endif %}"></li>
+                  {% endfor %}
               </ol>
               <div class="carousel-inner" role="listbox">
                   {% for item in banner %}
