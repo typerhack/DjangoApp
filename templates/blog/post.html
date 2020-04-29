@@ -1,1 +1,64 @@
-<h1>this is a post</h1>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid col-xl-12 justify-content-center news-photo-container"><img
+            src="{{ blog_post.photo_main.url }}"
+            class="img-fluid"
+            alt="{{ blog_post.title }}"
+            id="main_news_photo"></div>
+    <div class="row justify-content-center">
+        <h1 class="news-title">{{ blog_post.title }}</h1>
+    </div>
+    <div class="row justify-content-center author-row">
+        <div class="col-6 align-self-center"><img src="{{ blog_post.author.photo.url }}" alt="Author Picture"
+                                                  width="50" height="50"
+                                                  class="img-fluid rounded-circle"></div>
+        <div class="col-6 align-self-center" dir="rtl" style="text-align: right;">
+            <p>{{ blog_post.author }}<br>تاریخ: {{ blog_post.article_date }}</p>
+        </div>
+    </div>
+    <div class="row justify-content-center" style="padding-bottom: 50px;">
+        <div class="col-xl-10 news-body-text" dir="rtl">
+            <p>{{ blog_post.article }}</p>
+        </div>
+    </div>
+    {% if blog_post.video_link %}
+    <div class="row justify-content-center" style="padding-bottom: 25px;">
+        <div class="embed-responsive embed-responsive-16by9 video_frame">
+            <iframe class="embed-responsive-item"
+                    src="{{ blog_post.video_link }}"></iframe>
+        </div>
+    </div>
+    {% endif %}
+    <div class="row justify-content-center gallery-text author-row">
+        <h3>گالری تصاویر</h3>
+    </div>
+    <div class="container-fluid col-10">
+        <div class="gallery"><a href="{{ blog_post.photo_main.url }}" data-lightbox="mygallery"
+                                data-title="{{ blog_post.title }}"><img src="{{ blog_post.photo_main.url }}"
+                                                                        alt="{{ blog_post.title }}"
+                                                                        class="img-fluid"></a>
+            {% if blog_post.photo_1 %}
+                <a href="{{ blog_post.photo_1.url }}" data-lightbox="mygallery" data-title="{{ blog_post.title }}">
+                    <img src="{{ blog_post.photo_1.url }}" alt="{{ blog_post.title }}" class="img-fluid"></a>
+            {% endif %}
+            {% if blog_post.photo_2 %}
+                <a href="{{ blog_post.photo_2.url }}" data-lightbox="mygallery" data-title="{{ blog_post.title }}">
+                    <img src="{{ blog_post.photo_2.url }}" alt="{{ blog_post.title }}" class="img-fluid"></a>
+            {% endif %}
+            {% if blog_post.photo_3 %}
+                <a href="{{ blog_post.photo_3.url }}" data-lightbox="mygallery" data-title="{{ blog_post.title }}">
+                    <img src="{{ blog_post.photo_3.url }}" alt="{{ blog_post.title }}" class="img-fluid"></a>
+            {% endif %}
+            {% if blog_post.photo_4 %}
+                <a href="{{ blog_post.photo_4.url }}" data-lightbox="mygallery" data-title="{{ blog_post.title }}">
+                    <img src="{{ blog_post.photo_4.url }}" alt="{{ blog_post.title }}" class="img-fluid"></a>
+            {% endif %}
+            {% if blog_post.photo_5 %}
+                <a href="{{ blog_post.photo_5.url }}" data-lightbox="mygallery" data-title="{{ blog_post.title }}">
+                    <img src="{{ blog_post.photo_5.url }}" alt="{{ blog_post.title }}" class="img-fluid"></a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

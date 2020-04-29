@@ -30,3 +30,6 @@ this converts the result of makemigrations command into sql commands and show it
 
 ## python manage.py createsuperuser
 This creates an account for admin area
+
+## python manage.py collectstatic --noinput --clear
+This Command deletes all the the static data and copies it from the source
