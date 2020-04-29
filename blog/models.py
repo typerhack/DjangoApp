@@ -1,6 +1,8 @@
 from django.db import models
-from datetime import  datetime
+from datetime import datetime
 from author.models import Author
+from django_jalali.db import models as jmodels
+
 
 # Create your models here.
 class Blog(models.Model):
@@ -17,5 +19,9 @@ class Blog(models.Model):
     photo_5 = models.ImageField(upload_to='photos_article/%Y/%m/%d/', blank=True)
     is_published = models.BooleanField(default=False)
     article_date = models.DateTimeField(default=datetime.now())
+    article_persian_date = jmodels.jDateTimeField(default=datetime.now())
+
+
+
     def __str__(self):
         return self.title

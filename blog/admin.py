@@ -3,7 +3,7 @@ from .models import Blog
 
 # Register your models here.
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('id','title','is_published','author','article_date')
+    list_display = ('id','title','is_published','author','article_persian_date')
     list_display_links = ('id','title')
     list_filter = ('author','is_published',)
     list_editable = ('is_published',)
