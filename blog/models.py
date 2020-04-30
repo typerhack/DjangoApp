@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from author.models import Author
 from django_jalali.db import models as jmodels
+import persian
 
 
 # Create your models here.
@@ -21,7 +22,9 @@ class Blog(models.Model):
     article_date = models.DateTimeField(default=datetime.now())
     article_persian_date = jmodels.jDateTimeField(default=datetime.now())
 
-
+    def article_persian_date_report(self):
+        time_and_date = persian.convert_en_numbers(self.article_persian_date.strftime('تاریخ: %Y/%m/%d - ساعت: %H:%M'))
+        return time_and_date
 
     def __str__(self):
         return self.title
