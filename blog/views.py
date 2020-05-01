@@ -34,7 +34,8 @@ def search(request):
     if 'keywords' in request.GET:
         keywords = request.GET['keywords']
         if keywords:
-            queryset_blog = queryset_blog.filter(Q(article__icontains=keywords)|Q(title__icontains=keywords)|Q(author__first_name__icontains=keywords)|Q(author__last_name__icontains=keywords))
+            queryset_blog = queryset_blog.filter(Q(article__icontains=keywords) | Q(title__icontains=keywords) | Q(
+                author__first_name__icontains=keywords) | Q(author__last_name__icontains=keywords))
     paginator = Paginator(queryset_blog, 12)
     page = request.GET.get('page')
     paged_queryset_blog = paginator.get_page(page)

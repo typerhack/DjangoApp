@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_jalali',
+    'persian_converter.apps.PersianConverterConfig',
     'pages.apps.PagesConfig',
     'blog.apps.BlogConfig',
     'author.apps.AuthorConfig',

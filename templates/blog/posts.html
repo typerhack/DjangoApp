@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load persian_converter %}
 
 {% block content %}
     <article class="row justify-content-around" id="article" style="margin-bottom: 100px;">
@@ -35,10 +36,12 @@
                     {% for i in blog.paginator.page_range %}
                         {% if blog.number == i %}
                             <li class="page-item active">
-                                <a class="page-link" href="#">{{ i }} <span class="sr-only">(current)</span></a>
+                                <a class="page-link" href="#">{{ i|convert_to_persian }} <span
+                                        class="sr-only">(current)</span></a>
                             </li>
                         {% else %}
-                            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                            <li class="page-item"><a class="page-link"
+                                                     href="?page={{ i }}">{{ i|convert_to_persian }}</a></li>
                         {% endif %}
                     {% endfor %}
                     {% if blog.has_next %}

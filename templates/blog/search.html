@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load persian_converter %}
 
 
 {% block content %}
@@ -16,7 +17,8 @@
                 </div>
             {% endfor %}
         {% else %}
-            <div style="padding-top: 10%;"><img src="{% static 'Images/Sad-Smiley.svg' %}" alt="sad-smiley" width="200"></div>
+            <div style="padding-top: 10%;"><img src="{% static 'Images/Sad-Smiley.svg' %}" alt="sad-smiley" width="200">
+            </div>
             <div class="col-md-12" style="text-align: center; padding-top: 3%;">
                 <p>هیچ نتیجه ای برای جستوجوی شما یافت نشد.</p>
             </div>
@@ -38,10 +40,12 @@
                     {% for i in blog.paginator.page_range %}
                         {% if blog.number == i %}
                             <li class="page-item active">
-                                <a class="page-link" href="#">{{ i }} <span class="sr-only">(current)</span></a>
+                                <a class="page-link" href="#">{{ i|convert_to_persian }} <span
+                                        class="sr-only">(current)</span></a>
                             </li>
                         {% else %}
-                            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+                            <li class="page-item"><a class="page-link"
+                                                     href="?page={{ i }}">{{ i|convert_to_persian }}</a></li>
                         {% endif %}
                     {% endfor %}
                     {% if blog.has_next %}
