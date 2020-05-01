@@ -1,47 +1,65 @@
-  <nav class="navbar fixed-top navbar-expand-lg navbar-custom"> <a class="navbar-brand" href="index.html">Hybevo</a>
-    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">منو <span class="navbar-toggler-icon"></span> </button>
+{% load static %}
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-custom"><a class="navbar-brand" href="index.html">Hybevo</a>
+    <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false"
+            aria-label="Toggle navigation">منو <span class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent1">
-      <ul class="navbar-nav mr-auto">
-        <li
-            {% if '/' == request.path %}
-                class="nav-item active"
-            {% else %}
-                class="nav-item"
-            {% endif %} 
-        ><a class="nav-link nav-link-text" href="{% url 'index' %}">صفحه اصلی
+        <ul class="navbar-nav mr-auto">
+            <li
+                    {% if '/' == request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item"
+                    {% endif %}
+            ><a class="nav-link nav-link-text" href="{% url 'index' %}">صفحه اصلی
                 {% if '/' == request.path %}
                     <span class="sr-only">(current)</span>
                 {% endif %}
-            </a> </li>
-        <li
-        {% if 'blogs' in request.path %}
-                class="nav-item active"
-            {% else %}
-                class="nav-item"
-            {% endif %}> <a class="nav-link nav-link-text" href="{% url 'blogs' %}">مقالات
-            {% if 'about' in request.path %}
+            </a></li>
+            <li
+                    {% if 'blogs' in request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item"
+                    {% endif %}><a class="nav-link nav-link-text" href="{% url 'blogs' %}">مقالات
+                {% if 'about' in request.path %}
                     <span class="sr-only">(current)</span>
                 {% endif %}
-        </a> </li>
-        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle nav-link-text" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> آموزش </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-			  <a class="dropdown-item nav-link-text" href="#">رایگان</a>
-			  <a class="dropdown-item nav-link-text" href="#">BIM</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item nav-link-text" href="#">تخصصی</a> </div>
-        </li>
-		  <li
-          {% if 'about' in request.path %}
-                class="nav-item active"
-            {% else %}
-                class="nav-item"
-            {% endif %}
-          > <a class="nav-link nav-link-text" href="{% url 'about' %}">درباره ما
-          {% if 'about' in request.path %}
+            </a></li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle nav-link-text" href="#"
+                                             id="navbarDropdown1" role="button" data-toggle="dropdown"
+                                             aria-haspopup="true" aria-expanded="false"> آموزش </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                    <a class="dropdown-item nav-link-text" href="#">رایگان</a>
+                    <a class="dropdown-item nav-link-text" href="#">BIM</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item nav-link-text" href="#">تخصصی</a></div>
+            </li>
+            <li
+                    {% if 'about' in request.path %}
+                        class="nav-item active"
+                    {% else %}
+                        class="nav-item"
+                    {% endif %}
+            ><a class="nav-link nav-link-text" href="{% url 'about' %}">درباره ما
+                {% if 'about' in request.path %}
                     <span class="sr-only">(current)</span>
                 {% endif %}
-          </a> </li>
-        <li class="nav-item"> <a class="nav-link nav-link-text" href="#">تماس با ما</a> </li>
-      </ul>
+            </a></li>
+            <li class="nav-item"><a class="nav-link nav-link-text" href="#">تماس با ما</a></li>
+        </ul>
+        <input id="search-btn" type="image" src="{% static 'Images/Magnifier.svg' %}">
+        <div id="search-overlay" class="block">
+            <div class="centered">
+                <div id='search-box'><input id="close-btn" type="image" src="{% static 'Images/close.svg' %}">
+                    <form action='{% url 'search' %}' id='search-form' method='get' target='_top'>
+                        <button id='search-button' type='submit'><img src="{% static 'Images/Magnifier.svg' %}"
+                                                                      class="img-fluid search-icon"></button>
+                        <input id='search-text' name='keywords' placeholder='برای جستوجو تایپ کنید.' type='text'/>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </nav>
+</nav>

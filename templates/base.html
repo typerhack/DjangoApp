@@ -34,6 +34,18 @@
 <script src="{% static 'js/popper.min.js' %}"></script>
 <script src="{% static 'js/bootstrap-4.3.1.js' %}"></script>
 <script src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        $('#close-btn').click(function () {
+            $('#search-overlay').fadeOut();
+            $('#search-btn').show();
+        });
+        $('#search-btn').click(function () {
+            $(this).hide();
+            $('#search-overlay').fadeIn();
+        });
+    });
+</script>
 {% block inline-js %}{% endblock %}
 </body>
 </html>
