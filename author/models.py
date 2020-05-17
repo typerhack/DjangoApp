@@ -2,6 +2,7 @@ from django.db import models
 from datetime import datetime
 from django_jalali.db import models as jmodels
 import persian
+import jdatetime
 
 
 # Create your models here.
@@ -12,11 +13,14 @@ class Author(models.Model):
     description = models.TextField(blank=True)
     phone = models.CharField(max_length=20)
     email = models.CharField(max_length=200)
-    start_date = models.DateTimeField(default=datetime.now())
-    start_persian_date = jmodels.jDateTimeField(default=datetime.now())
+    start_date = models.DateTimeField(auto_now_add=True)
+    start_persian_date = jmodels.jDateField(default=jdatetime.datetime.now)
+    start_time = models.TimeField(default=datetime.now)
 
     def persian_date_report(self):
-        time_and_date = persian.convert_en_numbers(self.start_persian_date.strftime('تاریخ: %Y/%m/%d - ساعت: %H:%M'))
+        date = self.start_persian_date.strftime('%Y/%m/%d')
+        time = self.start_time.strftime('%H:%M')
+        time_and_date = persian.convert_en_numbers(f"تاریخ: {date} - ساعت: {time}")
         return time_and_date
 
     def __str__(self):
