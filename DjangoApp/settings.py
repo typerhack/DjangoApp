@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'author.apps.AuthorConfig',
     'banner.apps.BannerConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 # Jalali calendar defaults

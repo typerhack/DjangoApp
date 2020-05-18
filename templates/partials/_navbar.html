@@ -27,9 +27,13 @@
                     <span class="sr-only">(current)</span>
                 {% endif %}
             </a></li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle nav-link-text" href="#"
-                                             id="navbarDropdown1" role="button" data-toggle="dropdown"
-                                             aria-haspopup="true" aria-expanded="false"> آموزش </a>
+            <li {% if 'training' in request.path %}
+                class="nav-item dropdown active"
+            {% else %}
+                class="nav-item"
+            {% endif %}><a class="nav-link dropdown-toggle nav-link-text" href="#"
+                           id="navbarDropdown1" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false"> آموزش </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                     <a class="dropdown-item nav-link-text" href="#">رایگان</a>
                     <a class="dropdown-item nav-link-text" href="#">BIM</a>
@@ -48,6 +52,23 @@
                 {% endif %}
             </a></li>
             <li class="nav-item"><a class="nav-link nav-link-text" href="#">تماس با ما</a></li>
+
+            <li {% if 'accounts' in request.path %}
+                class="nav-item dropdown active"
+            {% else %}
+                class="nav-item"
+            {% endif %}><a class="nav-link dropdown-toggle nav-link-text" href="#"
+                                             id="navbarDropdown2" role="button" data-toggle="dropdown"
+                                             aria-haspopup="true" aria-expanded="false"> <img
+                    src="{% static 'Images/account.svg' %}"
+                    alt="account pic"
+                    width="25"> </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                    <a class="dropdown-item nav-link-text" href="{% url 'login' %}">ورود</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item nav-link-text" href="{% url 'register' %}">عضویت</a>
+                </div>
+            </li>
         </ul>
         <input id="search-btn" type="image" src="{% static 'Images/Magnifier.svg' %}">
         <div id="search-overlay" class="block">

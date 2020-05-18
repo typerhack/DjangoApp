@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="" data-gr-c-s-loaded="true">
+        <div class="container" style="">
+            <div class="py-5 text-center"><img class="d-block mx-auto mb-4" src="{% static 'Images/OrigamiFox.svg' %}"
+                                               alt="Hybevo Logo" width="72" height="72" style="font-family: Yekan;">
+                <h2>فرم عضویت</h2>
+                <p class="lead" style="font-family: Yekan; color: rgba(136,136,136,1.00);">ورود اطلاعات صحیح در این فرم
+                    ما را در ارائه خدمات بهتر به شما یاری خواهد کرد.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 order-md-1" style="text-align: right;">
+                    <h4 class="mb-3" style="font-family: Yekan;">مشخصات</h4>
+                    <form class="needs-validation" novalidate="" id="register-form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" style="font-family: Yekan;">نام</label>
+                                <input type="text" class="form-control validate" id="firstName" placeholder="" value=""
+                                       required="">
+                                <div class="invalid-feedback"> نام شما اجباری است.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" style="font-family: Yekan;">نام خانوادگی</label>
+                                <input type="text" class="form-control validate" id="lastName" placeholder="" value=""
+                                       required="">
+                                <div class="invalid-feedback"> نام خانوادگی اجباری است.</div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                        <div class="mb-3">
+                            <label for="username" style="font-family: Yekan;">نام کاربری</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text">@</span></div>
+                                <input type="text" class="form-control validate" id="username" placeholder="Username"
+                                       required="">
+                                <div class="invalid-feedback" style="width: 100%;"> نام کاربری اجباری است.</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="password" style="font-family: Yekan;">رمز عبور</label>
+                                <input type="password" class="form-control pass-check" id="password" placeholder=""
+                                       required="">
+                                <small class="text-muted">رمز عبور باید حداقل شامل 8 کاراکتر بوده وشامل حروف کوچک، بزرگ،
+                                    اعداد و کاراکتر های خاص (مثل-=[]\;,./~!@#$%^&amp;*()_+{}|:&lt;&gt;? ) شود.</small>
+                                <div class="invalid-feedback"> رمز عبور اجباری است.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="repassword" id="test" style="font-family: Yekan;">تکرار رمز عبور</label>
+                                <input type="password" class="form-control pass-check" id="repassword" placeholder=""
+                                       required="">
+                                <div class="invalid-feedback"> تکرار رمز عبور اجباری است.</div>
+                                <div class="" id="pass-error"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" style="font-family: Yekan;">ایمیل</label>
+                            <input type="email" class="form-control validate" id="email" placeholder="you@example.com"
+                                   required="">
+                            <div class="invalid-feedback"> لطفا ایمیل معتبر وارد کنید.</div>
+                        </div>
+                        <hr class="mb-4">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="mobile" style="font-family: Yekan;">شماره همراه</label>
+                                <input type="text" class="form-control validate" id="mobile" placeholder="*********09">
+                                <div class="invalid-feedback">شماره تلفن صحیح نیست.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="job" style="font-family: Yekan;">شغل</label>
+                                <input type="text" class="form-control validate" id="job" placeholder="">
+                                <small class="text-muted"></small>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            <hr class="mb-4">
+                        </div>
+                        <hr class="mb-4">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="degree" style="font-family: Yekan;">مقطع تحصیلی</label>
+                                <select name="degree" class="form-control">
+                                    <option>کارشناسی</option>
+                                    <option>کارشناسی ارشد</option>
+                                    <option>دکتری</option>
+                                </select>
+                                <div class="invalid-feedback"> مقطع تحصیلی خود را انتخاب کنید.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="major" style="font-family: Yekan;">رشته تحصیلی</label>
+                                <input type="" class="form-control validate" id="major" placeholder="" required="">
+                                <div class="invalid-feedback"> رشته تحصیلی صحیح خود را وارد کنید.</div>
+                            </div>
+                            <hr class="mb-4">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="university" style="font-family: Yekan;">دانشگاه محل تحصیل</label>
+                                <input type="" class="form-control validate" id="university" placeholder="" required="">
+                                <div class="invalid-feedback"> دانشگاه محل تحصیل خود را وارد کنید.</div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="student-id-card" style="font-family: Yekan;">تصویر کارت دانشجویی</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="student-id-card">
+                                    <label class="custom-file-label" for="student-id-card" style="padding-right: 30%">انتخاب
+                                        فایل</label>
+                                    <small class="text-muted">بارگذاری فایل تصویر کارت دانشجویی برای دانشجویان الزامی
+                                        است.</small>
+                                    <div class="invalid-feedback">بارگذاری فایل تصویر فقط با فرمت های jpg و png امکان
+                                        پذیر است.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mb-4">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="newsletter">
+                            <label class="custom-control-label" for="newsletter" style="font-family: Yekan;">تمایل به
+                                دریافت خبرنامه دارم.</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="student">
+                            <label class="custom-control-label" for="student" style="font-family: Yekan;">درحال حاضر
+                                مشغول به تحصیل هستم.</label>
+                        </div>
+                        <hr class="mb-4">
+                        <button type="submit" class="btn btn-primary btn-lg btn-block" id="enter-btn"
+                                style="font-family: Yekan;">ورود
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="my-3 pt-3 text-muted text-center text-small" id="privacy-link">
+                <p class="mb-1">Hybevo</p>
+                <p><a href="privacy-policy.html" style="font-family: Yekan;">سیاست حفظ حریم خصوصی</a></p>
+                <p><a href="contact.html" style="font-family: Yekan;">پشتیبانی</a></p>
+            </div>
+        </div>
+        <footer class="row" id="footer">
+            <div class="col-xl-12" style="padding-bottom: 10px"><a href="https://www.facebook.com/hybevo/"><img
+                    src="Images/Icon/FacebookIcon.svg" class="img-fluid icon" alt="Facebook" width="48" height="48"></a>
+                <a href="https://www.instagram.com/hybevo/"><img src="Images/Icon/InstagramIcon.svg" alt="Instagram"
+                                                                 width="48" class="img-fluid icon"></a> <a
+                        href="https://t.me/HybridEvolution"><img src="Images/Icon/TelegramIcon.svg" alt="Telegram"
+                                                                 width="48" height="48" class="img-fluid icon"></a>
+            </div>
+        </footer>
+    </div>
+{% endblock %}
+
+{% block inline-js %}
+    <script>
+        //-------------------------------------------------------------------------------------------
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (document.getElementById("password").value != document.getElementById("repassword").value) {
+                            alert("Password mismatch");
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+        //-------------------------------------------------------------------------------------------
+        // Check feilds for validation
+        //     var validation = document.getElementsByClassName('validate');
+        //	var form = document.getElementById('register-form');
+        //	form.addEventListener('submit',function(event){
+        //		for(var i=0; i<validation.length; i++){
+        //			if(validation[i].checkValidity()===true){
+        //				validation[i].classList.add('pass-valid');
+        //			}else{
+        //				validation[i].classList.add('pass-invalid');
+        //				event.preventDefault();
+        //				event.stopPropagation();
+        //			}
+        //		}
+        //	})
+        //
+        //-------------------------------------------------------------------------------------------
+        // Password checker
+        document.getElementById('repassword').addEventListener('input', function (event) {
+            var pass = document.getElementById('password').value;
+            var repass = document.getElementById('repassword').value;
+            var passFeilds = document.getElementsByClassName('pass-check');
+
+            if (pass != repass) {
+                // Remove added classes
+                for (var i = 0; i < passFeilds.length; i++) {
+                    passFeilds[i].className = "form-control pass-check";
+                }
+                event.preventDefault();
+                // Set the text
+                document.getElementById('pass-error').innerHTML = 'رمز عبور با تکرار آن همخوانی ندارد.';
+                // Add the invalid class
+                document.getElementById('repassword').classList.add('pass-invalid');
+            } else {
+                // Remove added classes
+                for (i = 0; i < passFeilds.length; i++) {
+                    passFeilds[i].className = "form-control pass-check";
+                }
+                // Set the text
+                document.getElementById('pass-error').innerHTML = '';
+                // Add the valid class
+                document.getElementById('repassword').classList.add('pass-valid');
+            }
+        });
+
+    </script>
+    <script>
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+{% endblock %}
