@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% load persian_converter %}
 
+{% block title %}
+    | Blogs
+{% endblock %}
 {% block content %}
     <article class="row justify-content-around" id="article" style="margin-bottom: 100px;">
         {% if blog %}

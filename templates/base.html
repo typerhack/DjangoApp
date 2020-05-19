@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hybevo</title>
+    <title>Hybevo {% block title %}{% endblock %}</title>
     <!-- Bootstrap -->
     <link href="{% static 'css/bootstrap-4.3.1.css' %}" rel="stylesheet">
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" type="text/css">
@@ -46,6 +46,13 @@
         });
     });
 </script>
+<script>
+    // Error Fade out
+    setTimeout(function () {
+        $('#message').fadeOut('slow')
+    }, 3000);
+</script>
+
 {% block inline-js %}{% endblock %}
 </body>
 </html>

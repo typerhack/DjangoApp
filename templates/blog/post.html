@@ -2,6 +2,9 @@
 {% load static %}
 {% load jformat %}
 
+{% block title %}
+    | {{ blog_post.title }}
+{% endblock %}
 {% block content %}
     <div class="container-fluid col-xl-12 justify-content-center news-photo-container"><img
             src="{{ blog_post.photo_main.url }}"

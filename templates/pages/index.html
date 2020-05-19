@@ -1,78 +1,109 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
+{% block title %}
+    | Home
+{% endblock %}
 {% block content %}
     <div class="row">
-      <div class="col-xl-12" id="banner">
-        <h1>Hybevo</h1>
-        <img src="{% static 'Images/Banner-small.jpg' %}" class="img-fluid" alt="Architect Desk"></div>
+        <div class="col-xl-12" id="banner">
+            <h1>Hybevo</h1>
+            <img src="{% static 'Images/Banner-small.jpg' %}" class="img-fluid" alt="Architect Desk"></div>
     </div>
+    <!-- Alert -->
+    {% include 'partials/_alerts.html' %}
+
     <section class="row justify-content-xl-around" id="highlights" style="padding-top: 20px">
-      <div class="col-sm-4 col-xl-3">
-<h2 dir="RTL"><img src="{% static 'Images/Research-Icon.svg' %}"alt="Research" class="img-size"/><br><strong class="para-header-size header-text">طراحی بر مبنای تحقیق </strong></h2>
-        <p><span class="para-text-size" dir="RTL">ما باور  داریم که طراحی از روند قدیمی خود خارج شده و نیاز است تا طراحی نوین بر اساس روش  های علمی صورت پذیرد. </span></p>
-      </div>
-      <div class="col-sm-4 col-xl-3">
-<h2 dir="RTL"><img src="{% static 'Images/BIM.svg' %}" alt="Building Information Modeling" class="img-size"/><br><strong class="para-header-size header-text">مدیریت اطلاعات ساختمان </strong></h2>
-        <p><span class="para-text-size" dir="RTL">این  رویکرد جدید با خود فرصت های زیادی را به ارمغان آورده است. هر شرکتی با ساختار  کوچک و بزرگ توانایی انطباق خود را با این سیستم دارد. </span></p>
-      </div>
-      <div class="col-sm-4 col-xl-3">
-        <h2 dir="RTL"><img src="{% static 'Images/Parametric Architecture.png' %}" alt="parametric Architecture"class="img-size"/><br><strong class="para-header-size header-text">طراحی پارامتریک </strong></h2>
-        <p><span class="para-text-size" dir="RTL">معماری  پارامتریک تنها جنبه دنیای پارامتریک نیست. این موضوع با خود نوعی فرآیند حل مسئله  را به ارمغان می آورد.</span></p>
-      </div>
-      <div class="w-100 d-xl-block d-none"></div>
-      <div class="col-sm-4 col-xl-3">
-<h2><img src="{% static 'Images/Tools.svg' %}" alt="Creating Tools" class="img-size"/><br><span class="para-header-size header-text" dir="RTL">ساخت ابزار </span></h2>
-        <p><span class="para-text-size" dir="RTL">ما باور  داریم که مسائل پیچیده نیازمند ابزار مناسب برای حل هستند. ساخت ابزار طراحی  فرآیندی است که امروزه در شرکت های نوین بسیار رواج دارد. </span></p>
-      </div>
-      <div class="col-sm-4 col-xl-3">
-<h2><img src="{% static 'Images/Training.svg' %}" alt="Training" class="img-size"/><br><span class="para-header-size header-text" dir="RTL">آموزش </span></h2>
-        <p><span class="para-text-size" dir="RTL">استفاده  از اصول  روش های قدیمی برای رسیدن به  طراحی نوین میسر نیست. آموزش بخشی جدایی ناپذیر از فرآیند رشد و توسعه شرکت هاست. </span></p>
-      </div>
-      <div class="col-sm-4 col-xl-3">
-<h2><img src="{% static 'Images/SocialResponsiblity.svg' %}" alt="Social Responsiblity" class="img-size" /><br>
-<span class="para-header-size header-text" dir="RTL">مسئولیت اجتماعی</span></h2>
-        <p><span class="para-text-size" dir="RTL">هر گروه  یا فردی امروزه جدای از انجام فعالیت های روتین شرکتی مسئولیتی اجتماعی بر عهده دارند.  باور داریم که ارتقای سطح دانش و فرهنگی وظیفه خطیری است که بر عهده ما نهاده شده  است.</span></p>
-      </div>
+        <div class="col-sm-4 col-xl-3">
+            <h2 dir="RTL"><img src="{% static 'Images/Research-Icon.svg' %}" alt="Research"
+                               class="img-size"/><br><strong class="para-header-size header-text">طراحی بر مبنای
+                تحقیق </strong></h2>
+            <p><span class="para-text-size" dir="RTL">ما باور  داریم که طراحی از روند قدیمی خود خارج شده و نیاز است تا طراحی نوین بر اساس روش  های علمی صورت پذیرد. </span>
+            </p>
+        </div>
+        <div class="col-sm-4 col-xl-3">
+            <h2 dir="RTL"><img src="{% static 'Images/BIM.svg' %}" alt="Building Information Modeling"
+                               class="img-size"/><br><strong class="para-header-size header-text">مدیریت اطلاعات
+                ساختمان </strong></h2>
+            <p><span class="para-text-size" dir="RTL">این  رویکرد جدید با خود فرصت های زیادی را به ارمغان آورده است. هر شرکتی با ساختار  کوچک و بزرگ توانایی انطباق خود را با این سیستم دارد. </span>
+            </p>
+        </div>
+        <div class="col-sm-4 col-xl-3">
+            <h2 dir="RTL"><img src="{% static 'Images/Parametric Architecture.png' %}" alt="parametric Architecture"
+                               class="img-size"/><br><strong class="para-header-size header-text">طراحی
+                پارامتریک </strong></h2>
+            <p><span class="para-text-size" dir="RTL">معماری  پارامتریک تنها جنبه دنیای پارامتریک نیست. این موضوع با خود نوعی فرآیند حل مسئله  را به ارمغان می آورد.</span>
+            </p>
+        </div>
+        <div class="w-100 d-xl-block d-none"></div>
+        <div class="col-sm-4 col-xl-3">
+            <h2><img src="{% static 'Images/Tools.svg' %}" alt="Creating Tools" class="img-size"/><br><span
+                    class="para-header-size header-text" dir="RTL">ساخت ابزار </span></h2>
+            <p><span class="para-text-size" dir="RTL">ما باور  داریم که مسائل پیچیده نیازمند ابزار مناسب برای حل هستند. ساخت ابزار طراحی  فرآیندی است که امروزه در شرکت های نوین بسیار رواج دارد. </span>
+            </p>
+        </div>
+        <div class="col-sm-4 col-xl-3">
+            <h2><img src="{% static 'Images/Training.svg' %}" alt="Training" class="img-size"/><br><span
+                    class="para-header-size header-text" dir="RTL">آموزش </span></h2>
+            <p><span class="para-text-size" dir="RTL">استفاده  از اصول  روش های قدیمی برای رسیدن به  طراحی نوین میسر نیست. آموزش بخشی جدایی ناپذیر از فرآیند رشد و توسعه شرکت هاست. </span>
+            </p>
+        </div>
+        <div class="col-sm-4 col-xl-3">
+            <h2><img src="{% static 'Images/SocialResponsiblity.svg' %}" alt="Social Responsiblity"
+                     class="img-size"/><br>
+                <span class="para-header-size header-text" dir="RTL">مسئولیت اجتماعی</span></h2>
+            <p><span class="para-text-size" dir="RTL">هر گروه  یا فردی امروزه جدای از انجام فعالیت های روتین شرکتی مسئولیتی اجتماعی بر عهده دارند.  باور داریم که ارتقای سطح دانش و فرهنگی وظیفه خطیری است که بر عهده ما نهاده شده  است.</span>
+            </p>
+        </div>
     </section>
     <section class="row justify-content-center" id="feature">
-      <div class="col-md-9"><h2>برخی از فعالیت های ما</h2></div>
-      <div class="col-md-9">
-            <div id="carousel1" class="carousel slide" data-interval="10000" data-ride="carousel" style="background-color: rgba(0,0,0,0.00)">
-              <ol class="carousel-indicators">
-                  {% for item in banner %}
-                      <li data-target="#carousel1" data-slide-to="{{ forloop.counter }}" class="{% if forloop.first %}active{% endif %}"></li>
-                  {% endfor %}
-              </ol>
-              <div class="carousel-inner" role="listbox">
-                  {% for item in banner %}
-                      <div class="carousel-item {% if forloop.first %}active{% endif %}"> <img src="{{ item.project_photo.url }}" alt="{{ item.project_alt}}" width="1061" height="720" class="d-block mx-auto img-fluid">
-                  <div class="carousel-caption">
-                    <h5>{{ item.project_name }}</h5>
-                    <p>{{ item.project_location }}</p>
-                  </div>
+        <div class="col-md-9"><h2>برخی از فعالیت های ما</h2></div>
+        <div class="col-md-9">
+            <div id="carousel1" class="carousel slide" data-interval="10000" data-ride="carousel"
+                 style="background-color: rgba(0,0,0,0.00)">
+                <ol class="carousel-indicators">
+                    {% for item in banner %}
+                        <li data-target="#carousel1" data-slide-to="{{ forloop.counter }}"
+                            class="{% if forloop.first %}active{% endif %}"></li>
+                    {% endfor %}
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    {% for item in banner %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}"><img
+                                src="{{ item.project_photo.url }}" alt="{{ item.project_alt }}" width="1061"
+                                height="720" class="d-block mx-auto img-fluid">
+                            <div class="carousel-caption">
+                                <h5>{{ item.project_name }}</h5>
+                                <p>{{ item.project_location }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-                  {% endfor %}
-              </div>
-              <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
-              </div>
-      <div class="col-md-8 col-sm-10"><p>افتخار طراحی برای اهداف تاثیر گذار و بلند پایه را داشته ایم و در راستای رسالت خودمان همواره در جهت بهبود کوشیده ایم. </p></div>
+                <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev"> <span
+                        class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+                        class="sr-only">Previous</span> </a> <a class="carousel-control-next" href="#carousel1"
+                                                                role="button" data-slide="next"> <span
+                    class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span> </a>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-10"><p>افتخار طراحی برای اهداف تاثیر گذار و بلند پایه را داشته ایم و در راستای رسالت
+            خودمان همواره در جهت بهبود کوشیده ایم. </p></div>
     </section>
     <article class="row justify-content-around" id="article" style="margin-bottom: 100px;">
-    {% if blog %}
-        {% for post in blog %}
-            <div class="card col-md-4 col-xl-3"> <img class="card-img-top" src="{{ post.photo_main.url }}" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title" style="text-align: right">{{ post.title }}</h5>
-                <p class="card-text" style="text-align: right">{{ post.abstract }}</p>
-                <a href="{% url 'blog' post.id %}" class="btn btn-primary">ادامه...</a> </div>
+        {% if blog %}
+            {% for post in blog %}
+                <div class="card col-md-4 col-xl-3"><img class="card-img-top" src="{{ post.photo_main.url }}"
+                                                         alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title" style="text-align: right">{{ post.title }}</h5>
+                        <p class="card-text" style="text-align: right">{{ post.abstract }}</p>
+                        <a href="{% url 'blog' post.id %}" class="btn btn-primary">ادامه...</a></div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="col-md-12">
+                <p>No Blog Available</p>
             </div>
-        {% endfor %}
-    {% else %}
-        <div class="col-md-12">
-        <p>No Blog Available</p>
-        </div>
-    {% endif %}
+        {% endif %}
     </article>
 {% endblock %}
