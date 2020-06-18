@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'author.apps.AuthorConfig',
     'banner.apps.BannerConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig',
 ]
 
 # Jalali calendar defaults
@@ -163,3 +164,10 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
+
+# Email Config
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'hybevo@gmail.com'
+EMAIL_HOST_PASSWORD = 'odmqvoqottztmtzi'
+EMAIL_USE_TLS = True

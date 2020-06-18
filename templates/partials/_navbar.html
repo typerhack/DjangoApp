@@ -51,7 +51,11 @@
                     <span class="sr-only">(current)</span>
                 {% endif %}
             </a></li>
-            <li class="nav-item"><a class="nav-link nav-link-text" href="#">تماس با ما</a></li>
+            <li {% if 'contact' in request.path %}
+                class="nav-item dropdown active"
+            {% else %}
+                class="nav-item dropdown"
+            {% endif %}><a class="nav-link nav-link-text" href="{% url 'contact' %}">تماس با ما</a></li>
 
             <li {% if 'accounts' in request.path %}
                 class="nav-item dropdown active"

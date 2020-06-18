@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div style="text-align:center;">
+            <img class="d-block mx-auto mb-4" src="{% static 'Images/OrigamiFox.svg' %}" alt="Hybevo Logo" width="72" height="72">
+            <h2 style="font-family: Yekan;">تماس با ما</h2>
+            {% include 'partials/_alerts.html' %}
+            <p style="font-family: Yekan;">برای تماس با ما فرم زیر را پر کنید. کارشناسان ما در سریع ترین زمان با شما
+                تماس خواهند گرفت.</p>
+        </div>
+        <div class="row" style="padding-bottom: 5%;">
+            <div class="column my-auto">
+                <img src="{% static 'Images/contact.jpg' %}" style="width:100%">
+            </div>
+            <div class="column">
+                <form action="{% url 'contact' %}" method="post">
+                    {% csrf_token %}
+                    {% if user.ia_authenticated %}
+                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                    {% else %}
+                        <input type="hidden" name="user_id" value="0">
+                    {% endif %}
+                    <label for="first_name" class="form_label">نام:</label>
+                    <input type="text" id="first_name" name="first_name" placeholder="نام..." {% if user.is_authenticated %}
+                        value="{{ user.first_name }}"
+                           {% endif %} required>
+                    <label for="last_name" class="form_label">:نام خانوادگی</label>
+                    <input type="text" id="last_name" name="last_name" placeholder="نام خانوادگی..." {% if user.is_authenticated %}
+                        value="{{ user.last_name }}"
+                           {% endif %} required>
+                    <label for="phone" class="form_label">:تلفن تماس</label>
+                    <input type="tel" id="phone" name="phone" placeholder="تلفن تماس...">
+                    <label for="email" class="form_label">ایمیل:</label>
+                    <input type="email" id="email" name="email" placeholder="example@example.com" {% if user.is_authenticated %}
+                        value="{{ user.email }}"
+                           {% endif %} required>
+                    <label for="subject" class="form_label">موضوع:</label>
+                    <input type="text" id="subject" name="subject" placeholder="موضوع تماس..." required>
+                    <label for="messagetxt" class="form_label">متن:</label>
+                    <textarea id="messagetxt" name="messagetxt" placeholder="لطفا برای پاسخ بهتر خواسته خود را توضیح دهید."
+                              style="height:170px"></textarea>
+                    <input type="submit" value="ارسال" style="font-family: Yekan;">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

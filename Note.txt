@@ -33,3 +33,9 @@ This creates an account for admin area
 
 ## python manage.py collectstatic --noinput --clear
 This Command deletes all the the static data and copies it from the source
+
+## python manage.py migrate --fake <name_of_the-app> zero
+This removes the migration. some how it rolls back. you should delete the files in migration folder under the app
+
+## python manage.py showmigrations
+This shows what the migraion event will do
